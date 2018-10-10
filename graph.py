@@ -38,7 +38,7 @@ class Graph:
             r = q[0]
             del(q[0])
             #print(self.graph[r])
-            for v in self.grapssssssjkjjbh]:
+            for v in self.graph[r]:
                 if v not in visited:
                     print(v)
                     self.last = v
