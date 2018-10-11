@@ -134,3 +134,53 @@ g2.addEdge(1, 2)
 g2.addEdge(2, 3)
 g2.addEdge(0, 4)
 print ("Yes" if g2.isSC() else "No")
+
+
+# bfs with level
+'''
+class Graph:
+    def __init__(self,vertices,edges):
+        self.graph = {}
+        for v in range(vertices):
+            self.graph[v] = []
+        self.V = vertices
+        self.E = edges
+
+    def connect(self,x,y):
+            self.graph[x].append(y)
+            self.graph[y].append(x)
+    
+    def find_all_distances(self,s):
+        
+        q = []
+        visited = [-1]*self.V
+        q.append(s)
+        visited[s] = 1
+        level = [-1]*self.V
+        level[s] = 0
+        while q:
+            r = q[0]
+            del(q[0])
+            
+            for v in self.graph[r]:
+                if visited[v] == -1:
+                    visited[v] = 1
+                    level[v] = level[r] + 6
+                    q.append(v)
+        
+        del(l[s])
+        res = ' '.join(map(str,l))
+        print(res)
+
+
+t = int(input())
+for i in range(t):
+    n,m = [int(value) for value in input().split()]
+    graph = Graph(n,m)
+    for i in range(m):
+        x,y = [int(x) for x in input().split()]
+        graph.connect(x-1,y-1)
+    #print(graph.graph)
+    s = int(input())
+    graph.find_all_distances(s-1)
+'''
